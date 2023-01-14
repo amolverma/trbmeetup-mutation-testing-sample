@@ -26,6 +26,8 @@ class Customer
   private
 
   def shopping_ai?
-    name.to_i.odd?
+    Integer(name).odd?
+  rescue ArgumentError, TypeError
+    false
   end
 end
