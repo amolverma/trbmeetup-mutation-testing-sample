@@ -24,6 +24,13 @@ describe Customer do
       end
     end
 
+    context 'for pseudo shopping AIs' do
+      context 'with floating point name' do
+        let(:name) { '123.0' }
+        it { is_expected.to be false }
+      end
+    end
+
     context 'in Japan' do
       let(:country) { :japan }
 
