@@ -1,10 +1,23 @@
 require 'customer'
 
 describe Customer do
-  let(:customer) { Customer.new(age: age, country: country) }
+  let(:age) { nil }
+  let(:country) { nil }
+  let(:name) { nil }
+  let(:customer) { Customer.new(age: age, country: country, name: name) }
 
   describe '#allowed_to_buy_alcohol?' do
     subject { customer.allowed_to_buy_alcohol? }
+
+    context 'for shopping AIs' do
+      let(:name) { '123' }
+      it { is_expected.to be true }
+
+      context 'in Japan' do
+        let(:country) { :japan }
+        it { is_expected.to be false }
+      end
+    end
 
     context 'in Japan' do
       let(:country) { :japan }
