@@ -13,6 +13,8 @@ class Customer
   end
 
   def allowed_to_buy_alcohol?
-    age >= DRINKING_AGE_BY_COUNTRY[country]
+    age >= DRINKING_AGE_BY_COUNTRY.fetch(country)
+  rescue KeyError
+    false
   end
 end
