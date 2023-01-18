@@ -17,6 +17,11 @@ describe Customer do
         let(:country) { :japan }
         it { is_expected.to be false }
       end
+
+      context 'in countries other than Japan' do
+        let(:country) { :france }
+        it { is_expected.to be true }
+      end
     end
 
     context 'in Japan' do
