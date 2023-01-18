@@ -62,5 +62,11 @@ describe Customer do
         it { is_expected.to be true }
       end
     end
+
+    context 'for an invalid locale' do
+      let(:country) { :invalid }
+      let(:age) { 25 }
+      it { is_expected.to be false }
+    end
   end
 end
