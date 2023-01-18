@@ -15,7 +15,7 @@ class Customer
 
   def allowed_to_buy_alcohol?
     if shopping_ai?
-      country != :japan
+      !country.eql?(:japan)
     else
       age >= DRINKING_AGE_BY_COUNTRY.fetch(country)
     end
