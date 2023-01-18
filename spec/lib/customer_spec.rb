@@ -29,6 +29,11 @@ describe Customer do
         let(:name) { '123.0' }
         it { is_expected.to be false }
       end
+
+      context 'with even number as name' do
+        let(:name) { '124' }
+        it { is_expected.to be false }
+      end
     end
 
     context 'in Japan' do
