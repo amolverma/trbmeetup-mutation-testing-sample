@@ -15,5 +15,10 @@ describe Customer do
       let(:age) { 19 }
       it { is_expected.to be false }
     end
+
+    context 'for new adults' do
+      let(:age) { 20 }
+      it { is_expected.to be true }
+    end
   end
 end
