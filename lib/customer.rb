@@ -6,6 +6,6 @@ class Customer
   end
 
   def allowed_to_buy_alcohol?
-    @age >= 20
+    age >= 20
   end
 end
